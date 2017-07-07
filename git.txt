@@ -1,0 +1,23 @@
+* Local -> Remote repository, 'origin'
+cd C:\Users\foo\Downloads\workspace\
+echo "# learn java" >> README.md
+git init
+git add README.md
+git add '*'  #ADD TO STAGE
+git commit -m 'Add all local files' 
+git remote add origin https://github.com/fggo/java.git
+git push -u origin master
+#name of remote repo is 'origin'
+#-u : remember the parameter 
+#so that next time simply type : git push
+
+###REMOTE REPO -> LOCAL###
+git init
+git remote add origin https://github.com/fggo/javascript_wiley.git
+git pull origin master
+
+git diff HEAD
+git diff --staged
+git reset octofamily/octodog.txt    #unstaging
+git checkout -- octocat.txt
+git branch clean_up
