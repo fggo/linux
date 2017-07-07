@@ -160,6 +160,24 @@ sudo apt-get update
 sudo apt-get install sublime-text-installer
 ```
 
+install packages
+```
+1337 color scheme
+3024 color scheme
+A File icon
+All Autocomplete
+ColorSchemeSelector
+ColorSublime
+ColorSublime-Themes
+Github flavored markdown preview
+markdown preview
+markdownEditing
+Package Control
+Seti_UI
+Theme-Flatland
+View In Browser
+zzz A File icon zzz
+```
 
 # Gimp
 ```
