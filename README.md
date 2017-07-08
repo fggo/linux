@@ -32,6 +32,33 @@ Setting-Keyboard-shortcut (Typing) :
 Setting-Text Entry : add Hangul(fcitx)
 ```
 
+# git
+REMOTE REPO 'origin' -> LOCAL
+```
+mkdir ~/workspace/java && cd ~/workspace/java
+git init
+git remote add origin https://github.com/fggo/java.git
+git pull origin master
+
+git diff HEAD
+git diff --staged
+git reset octofamily/octodog.txt    #unstaging
+git checkout -- octocat.txt
+git branch clean_up
+```
+
+LOCAL -> REMOTE REPO 'origin'
+```
+cd ~\workspace\java
+echo "# learn java" >> README.md
+git init
+git add README.md
+git add '*'  #ADD TO STAGE
+git commit -m 'Add all local files' 
+git remote add origin https://github.com/fggo/java.git
+git push -u origin master
+```
+
 # Gparted
 ```
 sudo apt-get install gparted
@@ -213,3 +240,27 @@ sudo touch share/test.txt
 ```
 - Windows
 check network folder
+
+# vim
+1. Inroduction
+2. Two modes, insert and normal(Esc⟷i)
+3. Basic movement: ←h ↓j ↑k →l
+4. word, WORD movement: w, e, b, W, E, B
+5. Number powered movement, e.g. 5w
+6. Insert text repeatedly, e.g. 3iYes Esc, 3igo Esc
+7. Find a character, f and F, e.g. fw 3fq
+8. Go to matching parentheses, %
+9. Go to start/end of line, 0 and $
+10. Find word under cursor, * and #
+11. Goto beginning of the file/ end of the file/ nth line : gg/G/nG
+12. Search, /text with n and N (next and previous)
+13. Insert new line, o and O (next, previous line) Esc to normal
+14. Removing a character, x and X (under and left of the cursor) 
+15. Replacing letter under cursor, r, without changing to insert mode
+16. Deleting, d and pasting, p,  e.g. dw d2e
+17. Repetition with .  e.g. d2w . (keep typing . will keep removing words)
+18. Visual mode, v e.g. v e l d (will remove a word)
+19. :w (save) :q (quit) :q! (quit without saving) u (undo) ctrl+R (redo) :help
+
+
+
