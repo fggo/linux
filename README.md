@@ -142,7 +142,7 @@ tar -xvzf ~/Downloads/eclipse-inst-linux64.tar.gz
 
 Create .desktop file named exactly the same as the eclipse binary
 ```
-gedit .local/share/applications/eclipse.desktop
+gedit ~/.local/share/applications/eclipse.desktop
 ```
 
 Copy the following to eclipse.desktop and drag running eclipse to favorite bar
@@ -315,16 +315,66 @@ http://192.168.0.87:8080/gui
 # Piratebay - copy url - add torrent url in utorrent page
 ```
 
-# pycharm
-- Install pycharm, copy JetbrainsCrack.jar to /usr/share/pycharm/bin/
+# pycharm in Ubuntu
+- Install pycharm
+```
+sudo add-apt-repository ppa:viktor-krivak/pycharm
+sudo apt-get update 
+sudo apt-get install pycharm-professional
+```
+
+- copy .jar to /usr/share/pycharm/bin/
 - Add at the end of line of .vmoptions
-- Help > Register > Activation Code, type anything, click Ok
+- Help > Register > Activation Code, type something(or ThisCrackLicenseId), click Ok
 ```
 -javaagent:JetbrainsCrack.jar
 
 sudo gedit /usr/share/pycharm/bin/pycharm64.vmoptions
 sudo gedit /usr/share/pycharm/bin/pycharm.vmoptions
 
+sudo java -jar /usr/share/pycharm/bin/JetbrainsCrack.jar
+
 cd /usr/share/pycharm/bin/ && ./pycharm.sh
 ```
 
+# webstorm in Ubuntu
+get tar.gz from WebStorm web site
+```
+sudo mkdir /usr/share/webstorm
+sudo mv ~/Downloads/WebStorm-2017.2.tar.gz /usr/share/webstorm
+cd /usr/share/webstorm
+sudo tar -xzvf WebStorm-2017.2.tar.gz -C /usr/share/webstorm
+```
+
+[move files and directories to parent directory](https://superuser.com/questions/88202/how-do-i-move-files-and-directories-to-the-parent-folder-in-linux/542214)
+```
+cd /usr/share/webstorm/WebStorm-172.3317.70
+find . -maxdepth 1 -exec mv {} .. \;
+cd /usr/share/webstorm
+rm -r WebStorm-172.3317.70
+```
+
+```
+sudo java -jar /usr/share/webstorm/bin/JetbrainsCrack.jar
+```
+
+# pycharm & webstorm in Windows
+follow ReadMe.md instruction
+
+# pycharm & webstorm create shortcut
+```
+sudo gedit /usr/share/applications/pycharm.desktop
+```
+
+```
+[Desktop Entry]
+Version=1.0
+Name=PyCharm
+Exec=/usr/share/pycharm/bin/pycharm.sh
+Path=/usr/share/pycharm/bin
+Icon=/usr/share/pycharm/pycharm.png
+Terminal=false
+Type=Application
+Categories=Application;Development;IDE
+Keywords=ide;python;charm;
+```
