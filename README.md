@@ -137,7 +137,7 @@ sudo apt-get install default-jdk
 # Eclipse
 [Download tar.gz](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz&mirror_id=1222). Extract and install to /opt/
 ```
-tar -xvzf ~/Downloads/eclipse-inst-linux64.tar
+tar -xvzf ~/Downloads/eclipse-inst-linux64.tar.gz
 ```
 
 Create .desktop file named exactly the same as the eclipse binary
@@ -238,8 +238,8 @@ sudo mkdir -p /srv/samba/share
 sudo chown nobody.nogroup /srv/samba/share
 sudo gedit /etc/init/nmbd.conf
 
-sudo restart smbd
-sudo restart nmbd
+sudo service smbd restart
+sudo service nmbd restart
 
 sudo touch share/test.txt
 ```
@@ -314,3 +314,17 @@ http://localhost:8080/gui  (id : admin  pw: empty)
 http://192.168.0.87:8080/gui
 # Piratebay - copy url - add torrent url in utorrent page
 ```
+
+# pycharm
+- Install pycharm, copy JetbrainsCrack.jar to /usr/share/pycharm/bin/
+- Add at the end of line of .vmoptions
+- Help > Register > Activation Code, type anything, click Ok
+```
+-javaagent:JetbrainsCrack.jar
+
+sudo gedit /usr/share/pycharm/bin/pycharm64.vmoptions
+sudo gedit /usr/share/pycharm/bin/pycharm.vmoptions
+
+cd /usr/share/pycharm/bin/ && ./pycharm.sh
+```
+
