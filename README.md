@@ -378,3 +378,10 @@ Type=Application
 Categories=Application;Development;IDE
 Keywords=ide;python;charm;
 ```
+
+duplication launcher icon trouble-shooting. [link](https://askubuntu.com/questions/403766/duplicate-icons-for-manually-created-gnome-launcher-items). Add the line to .destkop
+```
+StartupWMClass=jetbrains-pycharm
+
+StartupWMClass=jetbrains-webstorm
+```
