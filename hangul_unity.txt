@@ -1,0 +1,28 @@
+# Hangul in Unity
+tested on Ubuntu 16.04.2 LTS
+```
+sudo apt-get install fcitx-hangul
+
+1. Setting > Launguage Support-install & update
+2. Select keyboard input method system as 'fcitx'
+```
+
+set modifier key
+```
+Setting-Keyboard-shortcut (Typing) : 
+        Switch to next - Multikey (hangul key)
+        Switch to previous - Disabled
+        Compose Key - R Alt
+        Alternative Characters Key - R Ctrl
+Setting-Text Entry : add Hangul(fcitx)
+
+1. AllSettings > Keyboard > Shortcuts Tab > Typing
+2. Switch to Next source, Switch to Previous sourc, Compose Key, Alternative Characters Key  set to 'Disabled' (press 'backspace')
+3. Compose Key:Disabled를 길게 눌러 Right Alt를 선택한다.
+4. Switch to next source는 한영키를 눌러 Multikey를 선택한다. 반드시 Compose Key 설정이 먼저되어야 Multikey를 선택할 수 있다.
+5. AllSetting 윈도우를 닫고 상단 메뉴바 오른쪽의 입력기 선택하는 것을 본다. 키보드 표시가 된 것이 fcitx이다. fcitx아이콘을 눌러서 Configure Current Input Method를 선택한다.
+6. Keyboard-English(US)가 있다면 +를 눌러 Hangul을 추가한다. (Uncheck “Only Show Current Language”). Korean이 아닌 Hangul이여야 한다.
+7. Global Config tab에서 Trigger Input Method는 한/영키를 눌러 Multikey로 설정(왼쪽 오른쪽 모두)하고 Extrakey for trigger input method는 Disabled로 설정한다. (Mac에서는 command key이므로 대신 shift+space를 선택한다.)
+8. Global Config tab에서 Program > Share State Among Window > All을 선택한다.
+9. Restart
+```
