@@ -32,7 +32,7 @@ cd /tmp  or /opt
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 # if you encounter any errors
-sudo apt-get -f install  
+sudo apt-get -f install
 ```
 
 # Git
@@ -128,30 +128,8 @@ user@pc:~/workspace/java/project1/src$ java -cp . project1_4.ClassPath
     BBB 
 ```
 
-# pycharm in Ubuntu
-- Install pycharm
-```
-sudo add-apt-repository ppa:viktor-krivak/pycharm
-sudo apt-get update 
-sudo apt-get install pycharm-professional
-```
-
-- copy .jar to /usr/share/pycharm/bin/
-- Add at the end of line of .vmoptions
-- Help > Register > Activation Code, type something(or ThisCrackLicenseId), click Ok
-```
--javaagent:JetbrainsCrack.jar
-
-sudo gedit /usr/share/pycharm/bin/pycharm64.vmoptions
-sudo gedit /usr/share/pycharm/bin/pycharm.vmoptions
-
-sudo java -jar /usr/share/pycharm/bin/JetbrainsCrack.jar
-
-cd /usr/share/pycharm/bin/ && ./pycharm.sh
-```
-
-# webstorm in Ubuntu
-get tar.gz from WebStorm web site
+# jetbrain in Ubuntu
+Download tar.gz from official web site
 ```
 sudo mkdir /usr/share/webstorm
 sudo mv ~/Downloads/WebStorm-2017.2.tar.gz /usr/share/webstorm
@@ -159,7 +137,7 @@ cd /usr/share/webstorm
 sudo tar -xzvf WebStorm-2017.2.tar.gz -C /usr/share/webstorm
 ```
 
-[move files and directories to parent directory](https://superuser.com/questions/88202/how-do-i-move-files-and-directories-to-the-parent-folder-in-linux/542214)
+[Move files and directories to parent directory](https://superuser.com/questions/88202/how-do-i-move-files-and-directories-to-the-parent-folder-in-linux/542214)
 ```
 cd /usr/share/webstorm/WebStorm-172.3317.70
 sudo find . -maxdepth 1 -exec mv {} .. \;
@@ -167,16 +145,26 @@ cd /usr/share/webstorm
 sudo rm -r WebStorm-172.3317.70
 ```
 
-- copy .jar to /usr/share/webstorm/bin/
-- run the following command:
+Add a line to .vmoptions 
 ```
-sudo java -jar /usr/share/webstorm/bin/JetbrainsCrack.jar
+sudo gedit /usr/share/pycharm/bin/pycharm64.vmoptions
+sudo gedit /usr/share/pycharm/bin/pycharm.vmoptions
+
+-javaagent:JetbrainsCrack.jar
 ```
 
-# pycharm & webstorm in Windows
+Copy .jar to /usr/share/pycharm/bin/ and Run
+```
+sudo java -jar /usr/share/pycharm/bin/JetbrainsCrack.jar
+cd /usr/share/pycharm/bin/ && ./pycharm.sh
+```
+
+Go to Help > Register > Activation Code, type something(or ThisCrackLicenseId), Ok
+
+# jetbrain in Windows
 follow ReadMe.md instruction
 
-# pycharm & webstorm create shortcut
+# jetbrain create shortcut
 ```
 sudo gedit /usr/share/applications/pycharm.desktop
 ```
@@ -187,17 +175,16 @@ Version=1.0
 Name=PyCharm
 Exec=/usr/share/pycharm/bin/pycharm.sh
 Path=/usr/share/pycharm/bin
-Icon=/usr/share/pycharm/pycharm.png
+Icon=/usr/share/pycharm/bin/pycharm.png
 Terminal=false
 Type=Application
 Categories=Application;Development;IDE
 Keywords=ide;python;charm;
 ```
 
-duplication launcher icon trouble-shooting. [link](https://askubuntu.com/questions/403766/duplicate-icons-for-manually-created-gnome-launcher-items). Add the line to .destkop
+Duplicating launcher icon trouble-shooting. [link](https://askubuntu.com/questions/403766/duplicate-icons-for-manually-created-gnome-launcher-items). Add the line to .destkop
 ```
 StartupWMClass=jetbrains-pycharm
-
 StartupWMClass=jetbrains-webstorm
 ```
 
