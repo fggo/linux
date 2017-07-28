@@ -180,10 +180,17 @@ Terminal=false
 Type=Application
 Categories=Application;Development;IDE
 Keywords=ide;python;charm;
+StartupWMClass=jetbrains-pycharm
 ```
 
 Duplicating launcher icon trouble-shooting. [link](https://askubuntu.com/questions/403766/duplicate-icons-for-manually-created-gnome-launcher-items). Add the line to .destkop
 ```
+1. Launch the application
+2. Fire up a terminal and run xprop WM_CLASS. Click the application window.
+3. You'll get some output like WM_CLASS(STRING) = "Navigator", "Firefox". Choose one of the classes, eg Firefox in this example
+4. Add the class as the value of StartupWMClass in the .desktop file. For example, StartupWMClass=Firefox
+5. Save the .desktop file, close the application and re-open it. There should now only be 1 icon in the launcher
+
 StartupWMClass=jetbrains-pycharm
 StartupWMClass=jetbrains-webstorm
 ```
