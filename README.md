@@ -128,59 +128,61 @@ user@pc:~/workspace/java/project1/src$ java -cp . project1_4.ClassPath
     BBB 
 ```
 
-# jetbrain in Ubuntu
-Download tar.gz from official web site
+# ide in Ubuntu
+Download tar.gz
 ```
-sudo mkdir /usr/share/webstorm
-sudo mv ~/Downloads/WebStorm-2017.2.tar.gz /usr/share/webstorm
-cd /usr/share/webstorm
-sudo tar -xzvf WebStorm-2017.2.tar.gz -C /usr/share/webstorm
+sudo mkdir /usr/share/ws
+sudo mv ~/Downloads/wside.tar.gz /usr/share/ws
+cd /usr/share/ws
+sudo tar -xzvf wside.tar.gz -C /usr/share/ws
 ```
 
-[Move files and directories to parent directory](https://superuser.com/questions/88202/how-do-i-move-files-and-directories-to-the-parent-folder-in-linux/542214)
+Move everything to parent directory. [link](https://superuser.com/questions/88202/how-do-i-move-files-and-directories-to-the-parent-folder-in-linux/542214)
 ```
-cd /usr/share/webstorm/WebStorm-172.3317.70
+cd /usr/share/ws/wside
 sudo find . -maxdepth 1 -exec mv {} .. \;
-cd /usr/share/webstorm
-sudo rm -r WebStorm-172.3317.70
+cd /usr/share/ws
+sudo rm -r wside
 ```
 
-Add a line to .vmoptions 
+Edit .vmoptions
 ```
-sudo gedit /usr/share/pycharm/bin/pycharm64.vmoptions
-sudo gedit /usr/share/pycharm/bin/pycharm.vmoptions
+sudo gedit /usr/share/pycharm/bin/ide64.vmoptions
+sudo gedit /usr/share/pycharm/bin/ide.vmoptions
 
--javaagent:JetbrainsCrack.jar
-```
-
-Copy .jar to /usr/share/pycharm/bin/ and Run
-```
-sudo java -jar /usr/share/pycharm/bin/JetbrainsCrack.jar
-cd /usr/share/pycharm/bin/ && ./pycharm.sh
+-javaagent:myFile.jar
 ```
 
-Go to Help > Register > Activation Code, type something(or ThisCrackLicenseId), Ok
 
-# jetbrain in Windows
-follow ReadMe.md instruction
-
-# jetbrain create shortcut
 ```
-sudo gedit /usr/share/applications/pycharm.desktop
+cp ~/myFile.jar /usr/share/ws/bin/
+sudo chown root.root myFile.jar
+sudo chmod 755 myFile.jar
+sudo java -jar /usr/share/ws/bin/myFile.jar
+cd /usr/share/ws/bin/ && ./ws.sh
+```
+help - reg - code, type anything.
+
+# ide in Windows
+follow ReadMe.md
+
+# ide create shortcut
+```
+sudo gedit /usr/share/applications/ws.desktop
 ```
 
 ```
 [Desktop Entry]
 Version=1.0
-Name=PyCharm
-Exec=/usr/share/pycharm/bin/pycharm.sh
-Path=/usr/share/pycharm/bin
-Icon=/usr/share/pycharm/bin/pycharm.png
+Name=WS
+Exec=/usr/share/ws/bin/ws.sh
+Path=/usr/share/ws/bin
+Icon=/usr/share/ws/bin/ws.png
 Terminal=false
 Type=Application
 Categories=Application;Development;IDE
-Keywords=ide;python;charm;
-StartupWMClass=jetbrains-pycharm
+Keywords=ide;ws;
+StartupWMClass=ws
 ```
 
 Duplicating launcher icon trouble-shooting. [link](https://askubuntu.com/questions/403766/duplicate-icons-for-manually-created-gnome-launcher-items). Add the line to .destkop
@@ -191,8 +193,7 @@ Duplicating launcher icon trouble-shooting. [link](https://askubuntu.com/questio
 4. Add the class as the value of StartupWMClass in the .desktop file. For example, StartupWMClass=Firefox
 5. Save the .desktop file, close the application and re-open it. There should now only be 1 icon in the launcher
 
-StartupWMClass=jetbrains-pycharm
-StartupWMClass=jetbrains-webstorm
+StartupWMClass=ws
 ```
 
 # Sublime Text 3
