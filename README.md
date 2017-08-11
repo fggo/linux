@@ -147,8 +147,8 @@ sudo rm -r wside
 
 Edit .vmoptions
 ```
-sudo gedit /usr/share/pycharm/bin/ide64.vmoptions
-sudo gedit /usr/share/pycharm/bin/ide.vmoptions
+sudo gedit /usr/share/ws/bin/ide64.vmoptions
+sudo gedit /usr/share/ws/bin/ide.vmoptions
 
 -javaagent:myFile.jar
 ```
