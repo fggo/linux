@@ -1,48 +1,13 @@
 * [Hangul in GNOME](#hangul-in-gnome)
 
-# Useful Commands
-```
-lshw -short
-lshw -class network
-
-dmesg
-```
-
-# tlp
-improve power usage and battery life in laptop
-```
-sudo add-apt-repository ppa:linrunner/tlp
-sudo apt-get update
-sudo apt-get install tlp tlp-rdw
-```
-
-# Hangul in GNOME
-tested on Ubuntu GNOME 17.04
-```
-sudo apt-get update
-sudo apt-get install nabi
-im-config  # select hangul & restart
-nabi - preference - Hangul tab - change Trigger key to Alt_R
-log out and log in again.
-```
-
-# Google-Chrome
-```
-cd /tmp  or /opt
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-# if you encounter any errors
-sudo apt-get -f install
-```
-
 # Git
 REMOTE REPO 'origin' -> LOCAL
 ```
-sudo apt-get update
-sudo apt-get install git
-mkdir ~/workspace/java && cd ~/workspace/java
+sudo apt update
+sudo apt install git
+mkdir -p ~/workspace/repo_name && cd ~/workspace/repo_name
 git init
-git remote add origin https://github.com/fggo/java.git
+git remote add origin https://github.com/fggo/repo_name.git
 git pull origin master
 
 git diff HEAD
@@ -61,6 +26,106 @@ git add '*'  #ADD TO STAGE
 git commit -m 'Add all local files' 
 git remote add origin https://github.com/fggo/java.git
 git push -u origin master
+```
+
+# Hangul in GNOME
+```
+sudo apt update
+sudo apt install nabi
+im-config  # select hangul & restart
+nabi - preference - Hangul tab - change Trigger key to Alt_R
+log out and log in again.
+```
+
+# ide in Ubuntu
+Download tar.gz
+```
+sudo mkdir /usr/share/ide
+sudo mv ~/Downloads/ide.tar.gz /usr/share/ide
+cd /usr/share/ide
+sudo tar -xzvf ide.tar.gz -C /usr/share/ide
+```
+
+Move everything to parent directory. [link](https://superuser.com/questions/88202/how-do-i-move-files-and-directories-to-the-parent-folder-in-linux/542214)
+```
+cd /usr/share/ws/wside
+sudo find . -maxdepth 1 -exec mv {} .. \;
+cd /usr/share/ws
+sudo rm -r wside
+```
+
+Edit .vmoptions
+```
+sudo gedit /usr/share/ws/bin/ide64.vmoptions
+sudo gedit /usr/share/ws/bin/ide.vmoptions
+
+-javaagent:myFile.jar
+```
+
+
+```
+cp ~/myFile.jar /usr/share/ide/bin/
+sudo chown root.root myFile.jar
+sudo chmod 755 myFile.jar
+sudo java -jar /usr/share/ide/bin/myFile.jar
+cd /usr/share/ide/bin/ && ./ide.sh
+```
+help - reg - code, type anything.
+
+# ide in Windows
+follow ReadMe.md
+
+# ide create shortcut
+```
+sudo gedit /usr/share/applications/ide.desktop
+```
+
+```
+[Desktop Entry]
+Version=1.0
+Name=ide
+Exec=/usr/share/ide/bin/ide.sh
+Path=/usr/share/ide/bin
+Icon=/usr/share/ide/bin/ide.png
+Terminal=false
+Type=Application
+Categories=Application;Development;IDE
+Keywords=ide;idename;
+StartupWMClass=ide
+```
+
+Duplicating or missing launcher icon [problem](https://askubuntu.com/questions/403766/duplicate-icons-for-manually-created-gnome-launcher-items):
+```
+1. Launch the application
+2. Type on terminal: 'xprop WM_CLASS' Right click the application window.
+3. WM_CLASS(STRING) = "Navigator", "Firefox". Choose one of the classes, e.g Firefox
+4. Add 'StartupWMClass=Firefox' to .desktop
+```
+
+# Useful Commands
+```
+lshw -short
+lshw -class network
+
+dmesg
+```
+
+# tlp
+improve power usage and battery life in laptop
+```
+sudo add-apt-repository ppa:linrunner/tlp
+sudo apt-get update
+sudo apt-get install tlp tlp-rdw
+```
+
+
+# Chrome
+```
+cd /tmp  or /opt
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+# if you encounter any errors
+sudo apt-get -f install
 ```
 
 # Gparted
@@ -126,74 +191,6 @@ user@pc:~/workspace/java/project1/src/project4$ ls
 user@pc:~/workspace/java/project1/src$ java -cp . project1_4.ClassPath
     AAA
     BBB 
-```
-
-# ide in Ubuntu
-Download tar.gz
-```
-sudo mkdir /usr/share/ws
-sudo mv ~/Downloads/wside.tar.gz /usr/share/ws
-cd /usr/share/ws
-sudo tar -xzvf wside.tar.gz -C /usr/share/ws
-```
-
-Move everything to parent directory. [link](https://superuser.com/questions/88202/how-do-i-move-files-and-directories-to-the-parent-folder-in-linux/542214)
-```
-cd /usr/share/ws/wside
-sudo find . -maxdepth 1 -exec mv {} .. \;
-cd /usr/share/ws
-sudo rm -r wside
-```
-
-Edit .vmoptions
-```
-sudo gedit /usr/share/ws/bin/ide64.vmoptions
-sudo gedit /usr/share/ws/bin/ide.vmoptions
-
--javaagent:myFile.jar
-```
-
-
-```
-cp ~/myFile.jar /usr/share/ws/bin/
-sudo chown root.root myFile.jar
-sudo chmod 755 myFile.jar
-sudo java -jar /usr/share/ws/bin/myFile.jar
-cd /usr/share/ws/bin/ && ./ws.sh
-```
-help - reg - code, type anything.
-
-# ide in Windows
-follow ReadMe.md
-
-# ide create shortcut
-```
-sudo gedit /usr/share/applications/ws.desktop
-```
-
-```
-[Desktop Entry]
-Version=1.0
-Name=WS
-Exec=/usr/share/ws/bin/ws.sh
-Path=/usr/share/ws/bin
-Icon=/usr/share/ws/bin/ws.png
-Terminal=false
-Type=Application
-Categories=Application;Development;IDE
-Keywords=ide;ws;
-StartupWMClass=ws
-```
-
-Duplicating launcher icon trouble-shooting. [link](https://askubuntu.com/questions/403766/duplicate-icons-for-manually-created-gnome-launcher-items). Add the line to .destkop
-```
-1. Launch the application
-2. Fire up a terminal and run xprop WM_CLASS. Click the application window.
-3. You'll get some output like WM_CLASS(STRING) = "Navigator", "Firefox". Choose one of the classes, eg Firefox in this example
-4. Add the class as the value of StartupWMClass in the .desktop file. For example, StartupWMClass=Firefox
-5. Save the .desktop file, close the application and re-open it. There should now only be 1 icon in the launcher
-
-StartupWMClass=ws
 ```
 
 # Sublime Text 3
@@ -264,11 +261,6 @@ check network folder
 18. Visual mode, v e.g. v e l d (will remove a word)
 19. :w (save) :q (quit) :q! (quit without saving) u (undo) ctrl+R (redo) :help
 
-# qpdfview  
-```
-sudo apt-get update
-sudo apt-get install qpdfview
-```
 
 # Gimp
 ```
@@ -292,28 +284,6 @@ sudo ln -s /path/to/VSCode/code /usr/local/bin/code
 # Source: https://code.visualstudio.com/Docs/setup#_linux
 ```
 
-# Foxit PDF Reader
-```
-cd /opt/foxit_reader
-mv FoxitReader_version_Setup.run.tar.gz /opt/foxit_reader
-tar -xvzf FoxitReader_version_Setup.run.tar.gz
-./FoxitReader_version_Setup.run
-# Uncompress the executable & Untar the .tar file:
-#   x: extracts files. tar can collect files or extract them. 
-#   z: tells tar to decompress the archive using gzip
-#   v: verbose output shows files being extracted.
-#   f: tells tar the compressed file path
-```
-
-# Unity Tweak Tool
-```
-sudo apt-get install unity-tweak-tool
-sudo add-apt-repository ppa:numix/ppa
-sudo apt-get update
-sudo apt-get install numix-gtk-theme numix-icon-theme-circle
-# use unity tweak tool
-# .icons .themes in home directory. ctrl + h to see hidden files
-```
 
 # Utorrent 
 [install](http://idroot.net/linux/install-utorrent-ubuntu-16-04/)
