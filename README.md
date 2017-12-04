@@ -48,10 +48,10 @@ sudo tar -xzvf ide.tar.gz -C /usr/share/ide
 
 Move everything to parent directory. [link](https://superuser.com/questions/88202/how-do-i-move-files-and-directories-to-the-parent-folder-in-linux/542214)
 ```
-cd /usr/share/ws/wside
+cd /usr/share/ide/ide
 sudo find . -maxdepth 1 -exec mv {} .. \;
-cd /usr/share/ws
-sudo rm -r wside
+cd /usr/share/ide
+sudo rm -r ide
 ```
 
 Edit .vmoptions
