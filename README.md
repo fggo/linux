@@ -59,7 +59,7 @@ Edit .vmoptions
 sudo gedit /usr/share/ws/bin/ide64.vmoptions
 sudo gedit /usr/share/ws/bin/ide.vmoptions
 
--javaagent:myFile.jar
+-javaagent:/full/path/to/myFile.jar
 ```
 
 
@@ -100,6 +100,17 @@ Duplicating or missing launcher icon [problem](https://askubuntu.com/questions/4
 2. Type on terminal: 'xprop WM_CLASS' Right click the application window.
 3. WM_CLASS(STRING) = "Navigator", "Firefox". Choose one of the classes, e.g Firefox
 4. Add 'StartupWMClass=Firefox' to .desktop
+```
+
+# create symlink
+```commandline
+sudo ln -s /full/path/to/script.sh /usr/local/bin/name_of_new_command
+vim /full/path/to/script.sh 
+    # --snip--
+    java -jar path/to/jar/jarName.jar "$*"
+    # "$*" takes all arguements given to the bash script and send them directly
+    # to your java program.
+    name_of_new_command arg1 arg2 arg3 arg4
 ```
 
 # Useful Commands
