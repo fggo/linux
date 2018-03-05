@@ -5,9 +5,14 @@ REMOTE REPO 'origin' -> LOCAL
 ```
 sudo apt update
 sudo apt install git
-mkdir -p ~/workspace/repo_name && cd ~/workspace/repo_name
+
+dnf check-update
+sudo dnf upgrade
+sudo dnf install git
+
+mkdir -p $HOME/repo_name && cd $HOME/repo_name
 git init
-git remote add origin https://github.com/fggo/repo_name.git
+git remote add origin https://github.com/github_user/repo_name.git
 git pull origin master
 
 git diff HEAD
@@ -16,15 +21,14 @@ git reset octofamily/octodog.txt    #unstaging
 git checkout -- octocat.txt
 git branch clean_up
 ```
+
 LOCAL -> REMOTE
 ```
-cd ~\workspace\java
-echo "# learn java" >> README.md
+cd $HOME/repo_name
 git init
-git add README.md
+git remote add origin https://github.com/github_user/repo_name.git
 git add '*'  #ADD TO STAGE
 git commit -m 'Add all local files' 
-git remote add origin https://github.com/fggo/java.git
 git push -u origin master
 ```
 
@@ -37,7 +41,7 @@ nabi - preference - Hangul tab - change Trigger key to Alt_R
 log out and log in again.
 ```
 
-# ide in Ubuntu
+# ide
 Download tar.gz
 ```
 sudo mkdir /usr/share/ide
@@ -62,7 +66,6 @@ sudo gedit /usr/share/ws/bin/ide.vmoptions
 -javaagent:/full/path/to/myFile.jar
 ```
 
-
 ```
 cp ~/myFile.jar /usr/share/ide/bin/
 sudo chown root.root myFile.jar
@@ -70,7 +73,6 @@ sudo chmod 755 myFile.jar
 sudo java -jar /usr/share/ide/bin/myFile.jar
 cd /usr/share/ide/bin/ && ./ide.sh
 ```
-help - reg - code, type anything.
 
 # ide in Windows
 follow ReadMe.md
