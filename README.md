@@ -1,7 +1,5 @@
 # Git
 ```commandline
-dnf check-update
-sudo dnf upgrade
 sudo dnf install git
 ```
 
@@ -10,12 +8,12 @@ REMOTE REPO 'origin' <-> LOCAL
 git clone https://github.com/github_user/repo_name.git
 cd ./repo_name/
 
-# or do this :
+# local -> remote
 mkdir -p $HOME/repo_name && cd $HOME/repo_name
 git init
 git remote add origin https://github.com/github_user/repo_name.git
 
-# make changes and do this :
+# after making changes : 
 git add '*'  #ADD TO STAGE
 git commit -m 'Add all local files' 
 git push -u origin master
@@ -45,7 +43,6 @@ cd /usr/share/ide
 sudo rm -r ide
 ```
 
-Edit .vmoptions
 ```commandline
 sudo gedit /usr/share/ws/bin/ide64.vmoptions
 sudo gedit /usr/share/ws/bin/ide.vmoptions
@@ -82,10 +79,9 @@ StartupWMClass=ide
 
 [Duplicating or missing launcher icon](https://askubuntu.com/questions/403766/duplicate-icons-for-manually-created-gnome-launcher-items):
 ```
-1. Launch the application
-2. Type on terminal: 'xprop WM_CLASS' Right click the application window.
-3. WM_CLASS(STRING) = "Navigator", "Firefox". Choose one of the classes, e.g Firefox
-4. Add 'StartupWMClass=Firefox' to .desktop
+$ xprop WM_CLASS
+# click application to print StartupWMClass
+# insert 'StartupWMClass=app_name' line in .desktop
 ```
 
 # create symlink
@@ -111,17 +107,9 @@ dmesg
 
 # tlp
 improve power usage and battery life in laptop
-```commandline
-sudo add-apt-repository ppa:linrunner/tlp
-sudo apt-get update
-sudo apt-get install tlp tlp-rdw
-```
 
 
-# power top
-```commandline
-sudo apt-get install powertop
-```
+# powertop
 
 
 # Java
@@ -169,11 +157,6 @@ user@pc:~/workspace/java/project1/src$ java -cp . project1_4.ClassPath
 
 
 # Sublime Text 3
-```commandline
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo apt-get update
-sudo apt-get install sublime-text-installer
-```
 install sublime packages
 ```
 Package Control
@@ -225,14 +208,6 @@ check network folder
 
 
 # Gimp
-```commandline
-sudo apt-get autoremove gimp gimp-plugin-registry
-# add the following PPA
-sudo add-apt-repository ppa:otto-kesselgulasch/gimp
-sudo apt-get update
-# reinstall the latest GIMP
-sudo apt-get install gimp
-```
 
 
 # Shutdown Issues
