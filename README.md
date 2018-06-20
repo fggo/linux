@@ -116,7 +116,18 @@ improve power usage and battery life in laptop
 ```commandline
 java -version
 javac -version # openjdk not installed
+# openjdk
 sudo apt-get install default-jdk
+
+# oracle jdk
+sudo yum localinstall jdk-8u172-linux-x64.rpm
+```
+
+set default java command
+```commandline
+sudo alternatives --config java
+1 ...
+2 ...
 ```
 
 
