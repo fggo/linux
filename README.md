@@ -22,6 +22,7 @@ git push -u origin master
 git show HEAD //latest commit log
 
 git checkout HEAD filename //discard changes and restore back to the last commit
+git checkout -- filename  //does the same thing as 'checkout HEAD'
 
 git add scene-2.txt
 git reset HEAD scene-2.txt //unstage file from the staging area using
