@@ -6,10 +6,11 @@ sudo dnf install git
 REMOTE REPO 'origin' <-> LOCAL
 ```commandline
 git clone https://github.com/github_user/repo_name.git
-cd ./repo_name/
+cd repo_name
 
 # local -> remote
-mkdir -p $HOME/repo_name && cd $HOME/repo_name
+mkdir -p $HOME/repo_name
+cd $HOME/repo_name
 git init
 git remote add origin https://github.com/github_user/repo_name.git
 
@@ -18,12 +19,30 @@ git add '*'  #ADD TO STAGE
 git commit -m 'Add all local files' 
 git push -u origin master
 
+git show HEAD //latest commit log
+
+git checkout HEAD filename //discard changes and restore back to the last commit
+
+git add scene-2.txt
+git reset HEAD scene-2.txt //unstage file from the staging area using
+// It does not discard file changes from the working directory, 
+// it just removes them from the staging area.
+
+git reset commit_SHA //undo commits
+
+git reset commit_b_SHA
+//Before reset :  a-b-c-d-HEAD
+//After reset :  a-b-HEAD
+
+
+
 git diff HEAD
 git diff --staged
 git reset octofamily/octodog.txt    #unstaging
 git checkout -- octocat.txt
 git branch clean_up
 ```
+
 
 
 # ide
