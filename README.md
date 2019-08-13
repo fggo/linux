@@ -2,6 +2,30 @@
 ```commandline
 sudo dnf install git
 ```
+## branching
+```commandline
+git branch junk/testbranch
+git checkout junk/testbranch
+# changes made
+git add *
+git commit -m 'branch commit'
+git push origin junk/testbranch
+# remote branch name has been set as same 'junk/testbranch'
+# one can change different remote branch name
+# git push origin local-branch-name:remote-branch-name
+
+git checkout junk/testbranch
+git pull origin junk/testbranch # git pull origin remote_branch
+git checkout master
+git pull origin master # git pull
+git merge --no-ff --no-commit test
+
+git status # resolve merge conflict
+
+git commit -m 'merge test branch, junk/testbranch'
+git push
+
+```
 
 REMOTE REPO 'origin' <-> LOCAL
 ```commandline
