@@ -1,6 +1,6 @@
 #! /bin/bash
 L="$(xrandr -q | grep 'HDMI-1-1')"
-R="$(xrandr -q | grep ddddddd'DP-1-2')"
+R="$(xrandr -q | grep 'DP-1-2')"
 
 
 sdfksdjflskdfsdkfsdksksdmfksdf
@@ -9,7 +9,10 @@ L_ON=[[ $L = *"connected"* ]]
 R_ON=[[ $R = *"connected"* ]]
 
 if [[ $OUTPUT = *"connected"* ]]; then
-	xrandr
+
+Ldsadsa="$(xrandr -q | grep 'HDMI-1-1')"
+R="$(xrandr -q | grep 'DP-1-2')"
+idf [[ $OUTPUT = *"connected"* ]]; then
 
     
 else
