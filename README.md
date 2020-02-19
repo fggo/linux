@@ -1,3 +1,28 @@
+# volume control
+
+* Volume up/down
+```commandline
+amixer -D pulse sset Master 3277+
+amixer -D pulse sset Master 3277-
+```
+
+* Mute/unmute toggle
+```commandline
+amixer -D pulse sset Master toggle
+```
+
+* check volume percentage
+```commandline
+amixer get Master
+```
+
+* play/pause/next/previous
+```commandline
+rhythmbox-client --play-pause
+rhythmbox-client --previous
+rhythmbox-client --next
+```
+
 # ide
 download tar.gz and do the following
 ```commandline
